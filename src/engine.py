@@ -1,17 +1,19 @@
 import sounddevice as sd
 from .config import *
+from .inference import RVCInference
 
 class AudioEngine:  # <--- Pastikan penulisan 'A' dan 'E' kapital
     def __init__(self):
         self.stream = None
 
+        self.ai = RVCInference(model_path="models/miku.pth")
+
     def audio_callback(self, indata, outdata, frames, time, status):
         if status:
-            print(f"Status Error: {status}")
+            print(status)
         
-        # CP-1: Langsung oper data (Loopback)
-        # Di CP-2 nanti, logic AI RVC bakal disisipkan di sini
-        outdata[:] = indata
+        processed_audio = self.ai.process(indata)
+        outdata[:] = processed_audio
 
     def start(self):
         print(f"--- Memulai Engine Voice Changer ---")

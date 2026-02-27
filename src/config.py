@@ -2,7 +2,7 @@
 
 # Sesuaikan ID ini dari hasil cek_id.py
 INPUT_DEVICE_ID = 1    # Mic Fisik
-OUTPUT_DEVICE_ID = 4   # CABLE Input (VB-Audio)
+OUTPUT_DEVICE_ID = 5   # CABLE Input (VB-Audio)
 
 # Global Audio Settings
 SAMPLE_RATE = 44100

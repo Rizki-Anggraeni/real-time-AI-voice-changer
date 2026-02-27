@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# AI Models & Audio (Biar gak kena limit GitHub)
+*.pth
+*.index
+*.wav
+*.mp3
+
+# IDE
+.vscode/
+.idea/
